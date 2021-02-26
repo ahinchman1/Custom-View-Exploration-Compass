@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ViewExploration</string>
+    <string name="north">N</string>
+    <string name="compass_needle">Compass needle</string>
+</resources>
