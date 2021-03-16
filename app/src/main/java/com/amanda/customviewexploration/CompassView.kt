@@ -27,7 +27,7 @@ class CompassView @JvmOverloads constructor(
     init {
         Log.d(TAG, "Kotlin init block called.")
         inflate(context, R.layout.compass_view, this)
-        Log.d(TAG, "YEP.")
+        Log.d(TAG, "inflation started.")
     }
 
     override fun onFinishInflate() {
@@ -54,6 +54,6 @@ class CompassView @JvmOverloads constructor(
     }
 
     companion object {
-        const val TAG = "Compass View"
+        const val TAG = "Compass_View"
     }
 }

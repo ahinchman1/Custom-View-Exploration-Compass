@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Log.d(CompassView.TAG, "onStart(): Start compass.")
+        Log.d(TAG, "onStart(): Start compass.")
         compass?.start()
     }
 
