@@ -9,12 +9,12 @@ import android.view.animation.RotateAnimation
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
 
-class CompassViewJava : ConstraintLayout {
+class CompassView : ConstraintLayout {
     private var currentAlpha = 0f
     private var compassNeedle: ImageView? = null
 
     constructor(context: Context) : super(context) {
-        Log.d(TAG, "CompassViewJava(context) called")
+        Log.d(TAG, "CompassView(context) called")
         View.inflate(context, R.layout.compass_view, this)
         Log.d(TAG, "Inflation started from constructor.")
     }
@@ -23,7 +23,7 @@ class CompassViewJava : ConstraintLayout {
         context: Context,
         attrs: AttributeSet?
     ) : super(context, attrs) {
-        Log.d(TAG, "CompassViewJava(context, attrs) called")
+        Log.d(TAG, "CompassView(context, attrs) called")
         View.inflate(context, R.layout.compass_view, this)
         Log.d(TAG, "Inflation started from constructor.")
     }
@@ -33,7 +33,7 @@ class CompassViewJava : ConstraintLayout {
         attrs: AttributeSet?,
         defStyleAttr: Int
     ) : super(context, attrs, defStyleAttr) {
-        Log.d(TAG, "CompassViewJava(context, attrs, defStyleAttr) called")
+        Log.d(TAG, "CompassView(context, attrs, defStyleAttr) called")
         View.inflate(context, R.layout.compass_view, this)
         Log.d(TAG, "Inflation started from constructor.")
     }
@@ -50,8 +50,6 @@ class CompassViewJava : ConstraintLayout {
 
     init {
         Log.d(TAG, "Kotlin init block called.")
-        inflate(context, R.layout.compass_view, this)
-        Log.d(TAG, "Inflation started from init block.")
     }
 
     public override fun onFinishInflate() {
