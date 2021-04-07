@@ -3,6 +3,8 @@ package com.amanda.customviewexploration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.View.generateViewId
+import android.view.ViewGroup.LayoutParams
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.*
 import androidx.constraintlayout.widget.ConstraintSet
@@ -18,12 +20,17 @@ class MainActivity : AppCompatActivity() {
     private var compass: Compass? = null
     private var compassView: CompassView? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val binding = ActivityMainBinding.inflate(layoutInflater)
+        val params = LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT)
 
         compassView = CompassView(this)
+        compassView?.run {
+            id = generateViewId()
+        }
+        binding.root.addView(compassView, params)
+        compassView?.let { setItemConstraints(binding.root, it.id, binding.north.id) }
 
         setContentView(binding.root)
         setupCompass()
@@ -53,6 +60,7 @@ class MainActivity : AppCompatActivity() {
             connect(compassViewId, END, PARENT_ID, END)
             connect(compassViewId, TOP, endViewId, BOTTOM)
             connect(compassViewId, BOTTOM, PARENT_ID, BOTTOM)
+            applyTo(constraintLayout)
         }
     }
 

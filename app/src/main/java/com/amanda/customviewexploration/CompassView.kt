@@ -68,7 +68,7 @@ class CompassView : ConstraintLayout {
         animation.duration = 500
         animation.repeatCount = 0
         animation.fillAfter = true
-        compassNeedle!!.startAnimation(animation)
+        compassNeedle?.startAnimation(animation)
     }
 
     companion object {
