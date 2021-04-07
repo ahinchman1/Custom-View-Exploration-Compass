@@ -13,7 +13,7 @@ import com.amanda.customviewexploration.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private var compass: Compass? = null
-    private var compassView: CompassViewJava? = null
+    private var compassView: CompassView? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

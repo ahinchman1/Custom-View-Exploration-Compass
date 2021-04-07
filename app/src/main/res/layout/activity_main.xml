@@ -22,7 +22,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintVertical_chainStyle="packed"/>
 
-    <com.amanda.customviewexploration.CompassViewJava
+    <com.amanda.customviewexploration.CompassView
         android:id="@+id/custom_view_compass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
