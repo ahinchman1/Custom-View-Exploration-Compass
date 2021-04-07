@@ -3,6 +3,9 @@ package com.amanda.customviewexploration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintLayout.LayoutParams.*
+import androidx.constraintlayout.widget.ConstraintSet
 import com.amanda.customviewexploration.databinding.ActivityMainBinding
 
 /**
@@ -41,6 +44,16 @@ class MainActivity : AppCompatActivity() {
         compass = Compass(this)
         val cl = getCompassListener()
         compass?.setListener(cl)
+    }
+
+    private fun setItemConstraints(constraintLayout: ConstraintLayout, compassViewId: Int, endViewId: Int) {
+        ConstraintSet().run {
+            clone(constraintLayout)
+            connect(compassViewId, START, PARENT_ID, START)
+            connect(compassViewId, END, PARENT_ID, END)
+            connect(compassViewId, TOP, endViewId, BOTTOM)
+            connect(compassViewId, BOTTOM, PARENT_ID, BOTTOM)
+        }
     }
 
     override fun onResume() {
